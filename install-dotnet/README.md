@@ -1,9 +1,9 @@
 # How to use
 
-``sh
+```sh
   chmod +x ./install.sh
   ./install.sh linux.txt
-``
+```
 
 # Choosing versions
 Create or modify the txt file.
