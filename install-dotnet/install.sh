@@ -10,15 +10,18 @@ download_file=$1
 
 while read url;
 do
-  rm -rf $HOME/Downloads/dotnet.tar.gz
+  if [ ! -z "$url" ]
+  then
+    rm -rf $HOME/Downloads/dotnet.tar.gz
 
-  filename=$(echo $url | cut -d'/' -f 8)
-  echo "Downloading version $filename..."
-  cd $HOME/Downloads
-  curl -Lo dotnet.tar.gz $url
+    filename=$(echo $url | cut -d'/' -f 8)
+    echo "Downloading version $filename..."
+    cd $HOME/Downloads
+    curl -Lo dotnet.tar.gz $url
 
-  echo "Extracting dotnet files of $filename ..."
-  tar -C .dotnet --skip-old-files -xf dotnet.tar.gz
+    echo "Extracting dotnet files of $filename ..."
+    tar -C .dotnet --skip-old-files -xf dotnet.tar.gz
+  fi
 done < $download_file
 
 rm -rf $HOME/Downloads/dotnet.tar.gz
