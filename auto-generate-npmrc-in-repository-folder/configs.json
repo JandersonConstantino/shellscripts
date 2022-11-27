@@ -1,0 +1,10 @@
+[
+  {
+    "starts_with": "https://gitlab.sample1.com.br",
+    "npmrc_filename": ".npmrc_sample1"
+  },
+  {
+    "starts_with": "https://gitlab.sample2.com.br",
+    "npmrc_filename": ".npmrc_sample2"
+  }
+]
